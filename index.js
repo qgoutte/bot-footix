@@ -28,6 +28,8 @@ client.on("message", function(message){
         else {
             var server = message.guild;
             let category;
+            let userID = "<@" + message.author.id + ">"
+            let channelId=`${args[0]}-${message.author.username}`
             server.channels.create(`${args[0]}-${message.author.username}`).then(channel =>{
                 switch (args[1].toLowerCase()){
                     case "fm21":
@@ -35,25 +37,30 @@ client.on("message", function(message){
                         if (!category) throw new Error("La catégorie n'existe pas");
                         channel.setParent(category.id);
                         message.reply(`Le channel pour ta carrière avec ${args[0]} a bien été crée dans la catégorie ${args[1]}`);
+                        channel.send(`${userID} voici ton channel pour ta carrière, bonne chance !`);
                         break;
                     case "fm20":
                         category = server.channels.cache.find(c => c.name == "Football Manager 2020 - Carrières" && c.type =="category");
                         if (!category) throw new Error("La catégorie n'existe pas");
                         channel.setParent(category.id);
                         message.reply(`Le channel pour ta carrière avec ${args[0]} a bien été crée dans la catégorie ${args[1]}`);
+                        channel.send(`${userID} voici ton channel pour ta carrière, bonne chance !`);
                         break;
                     case "online":
                         category = server.channels.cache.find(c => c.name == "Carrières en ligne" && c.type =="category");
                         if (!category) throw new Error("La catégorie n'existe pas");
                         channel.setParent(category.id);
                         message.reply(`Le channel pour ta carrière avec ${args[0]} a bien été crée dans la catégorie ${args[1]}`);
+                        channel.send(`${userID} voici ton channel pour ta carrière, bonne chance !`);
                         break;
                     default :
                     message.reply(`M'enfin, la catégorie que tu veux n'existe pas. Il faut que tu choisisse entre FM21, FM20 et ONLINE`);
 
                 }
                 
+                
             }).catch(console.error);
+            
         }
     }
 
