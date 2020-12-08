@@ -75,10 +75,9 @@ client.on("message", function(message){
             let channel
             let channelName = args[0] + "-" + message.author.username.toLowerCase(); 
 
-            message.reply(channelName);
             channel = server.channels.cache.find(c => c.name == channelName)
             if (channel === undefined){
-                message.reply(`Tu n'as pas de carrière avec ce club !`);
+                message.reply(`Tu n'as pas de carrière avec ce club tu ne peux donc pas la supprimer !`);
             }
             else {
                 channel.delete()
@@ -89,10 +88,35 @@ client.on("message", function(message){
         
     }
 
+    if (command === "esalon"){
+        
+        if (args[0] === undefined ){
+            message.reply(`Merci de saisir la commande au format suivant : !esalon as-monaco paris-sg`);
+        }
+        else {
+            var server = message.guild;
+            let channel
+            let channelName = args[0] + "-" + message.author.username.toLowerCase(); 
+            let newChannelName = args[1] + "-" + message.author.username.toLowerCase(); 
+
+            channel = server.channels.cache.find(c => c.name == channelName)
+            if (channel === undefined){
+                message.reply(`Tu n'as pas de carrière avec ce club, tu ne peux donc pas l'éditer !`);
+            }
+            else {
+                channel.edit({name : newChannelName});
+                message.reply(`Ta carrière ${channelName} a été modifiée en ${newChannelName}`);
+            }
+            
+        }
+        
+    }
+
     if (command === "help"){
         message.reply('Alors ? On se sent perdu petit footballer du dimanche? \n Moi, Footix, je vais t\'aider. Voici ce que je te propose : \n\n' + 
         '- **!csalon <club> <canal>** : Je te crée un salon pour ta nouvelle carrière de coach ! Attention, le nom du club ne doit pas comporter d\'espace mais doit être sous la forme sc-bastia \n\n'+
-        '- **!dsalon <club>** : Je supprime le salon de la carrière que tu m\'as désigné. Evidemment tu ne peux supprimer que les tiennes ;) Attention, le nom du club ne doit pas comporter d\'espace mais doit être sous la forme sc-bastia \n\n'+
+        '- **!dsalon <club>** : Je supprime le salon de la carrière que tu m\'as désigné. Evidemment tu ne peux supprimer que les tiens ;) Attention, le nom du club ne doit pas comporter d\'espace mais doit être sous la forme sc-bastia \n\n'+
+        '- **!esalon <club> <nouveau-club>** : J\'édite le nom du salon de la carrière que tu m\'as désigné. Evidemment tu ne peux éditer que les tiens ;) Attention, le nom du club ne doit pas comporter d\'espace mais doit être sous la forme sc-bastia \n\n'+
         '- **!help** : C\'est ce que tu viens de faire en faite ;). Je te donne la liste de mes fonctions \n\n'+
         '- **!ping** : PONG ! Pardon reflexe, ca te permet de voir le délai entre ta commande et mon retour');
     }
