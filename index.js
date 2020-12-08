@@ -92,6 +92,7 @@ client.on("message", function(message){
     if (command === "help"){
         message.reply('Alors ? On se sent perdu petit footballer du dimanche? \n Moi, Footix, je vais t\'aider. Voici ce que je te propose : \n\n' + 
         '- **!csalon <club> <canal>** : Je te crée un salon pour ta nouvelle carrière de coach ! Attention, le nom du club ne doit pas comporter d\'espace mais doit être sous la forme sc-bastia \n\n'+
+        '- **!dsalon <club>** : Je supprime le salon de la carrière que tu m\'as désigné. Evidemment tu ne peux supprimer que les tiennes ;) Attention, le nom du club ne doit pas comporter d\'espace mais doit être sous la forme sc-bastia \n\n'+
         '- **!help** : C\'est ce que tu viens de faire en faite ;). Je te donne la liste de mes fonctions \n\n'+
         '- **!ping** : PONG ! Pardon reflexe, ca te permet de voir le délai entre ta commande et mon retour');
     }
