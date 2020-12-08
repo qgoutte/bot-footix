@@ -15,9 +15,9 @@ To get the librairies, write these commands on your terminal :
 npm i -g discord.js
 ```
 
-### Installing
+### Install
 
-You needed create a Webhook on your Discord server to get Authentification file : tutorial here (https://www.digitaltrends.com/gaming/how-to-make-a-discord-bot/)
+You needed create an application and bot on the Discord Developer Portal.
 
 ## Authors
 
