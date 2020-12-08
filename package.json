@@ -1,0 +1,21 @@
+{
+  "name": "bot-footix",
+  "version": "0.1.0",
+  "description": "create bot for fm discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "football",
+    "manager",
+    "fm"
+  ],
+  "author": "qgoutte",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
