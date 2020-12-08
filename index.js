@@ -29,7 +29,7 @@ client.on("message", function(message){
             var server = message.guild;
             let category;
             let userID = "<@" + message.author.id + ">"
-            let channelId=`${args[0]}-${message.author.username}`
+            
             server.channels.create(`${args[0]}-${message.author.username}`).then(channel =>{
                 switch (args[1].toLowerCase()){
                     case "fm21":
