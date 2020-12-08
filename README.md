@@ -1,4 +1,4 @@
-# Bot Footix- V0.0.1
+# Bot Footix- V0.1.0
 
 This project concern the realisation of a discord bot for different commands. This bot was used on a Football Manager discord server.
 
